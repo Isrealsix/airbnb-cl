@@ -1,13 +1,13 @@
 import 'tailwindcss/tailwind.css'
 import '../styles/global.css'
 import ProgressBar from '@badrap/bar-of-progress';
-import Router from 'next/dist/server/router';
+import Router from 'next/router';
 
 
 const progress = new ProgressBar({
   size: 4,
   color: '#FE595E',
-  className: 'z-50',
+  className: 'z-50 rounded-2xl',
   delay: 100
 })
 
