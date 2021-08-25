@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
 import SmallCard from '../components/SmallCard';
+import MediumCard from '../components/MediumCard';
 
 export default function Home({exploreData, cardsData}) {
   return (
@@ -32,6 +33,12 @@ export default function Home({exploreData, cardsData}) {
 
         <section>
             <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
+
+            <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
+            {cardsData?.map(item => (
+              <MediumCard key={item.id} img={item.img} title={item.title}/>
+              ))}
+            </div>
         </section>
       </main>
     </div>
