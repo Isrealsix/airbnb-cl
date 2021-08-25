@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Image from "next/image";
 import { HeartIcon } from "@heroicons/react/outline";
+import { HeartIcon as HeartFill} from "@heroicons/react/solid";
 import { StarIcon } from "@heroicons/react/solid";
 
+
 const InfoCard = ({img, location, title, description, star, price, total}) => {
+    const [clicked, setClicked] = useState(false)
     return (
         <div className="flex py-7 px-2 pr-4cj border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t">
             <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0">
@@ -12,7 +16,9 @@ const InfoCard = ({img, location, title, description, star, price, total}) => {
             <div className="flex flex-col flex-grow pl-5">
                 <div className="flex justify-between">
                     <p>{location}</p>
-                    <HeartIcon className="h-7 cursor-pointer" />
+                    <div onClick={() => setClicked(prevState => !prevState)}>
+                        {!clicked ? (<HeartIcon className="h-7 cursor-pointer"/>) : (<HeartFill className="h-7 cursor-pointer text-red-400"/>)}
+                    </div>
                 </div>
 
                 <h4 className="text-xl">{title}</h4>
