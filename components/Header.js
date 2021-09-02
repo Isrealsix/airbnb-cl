@@ -3,7 +3,6 @@ import Image from 'next/image';
 import {
 	SearchIcon,
 	GlobeAltIcon,
-	MenuAlt1Icon,
 	UserCircleIcon,
 	UsersIcon,
 	MenuIcon,
